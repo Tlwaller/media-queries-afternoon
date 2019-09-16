@@ -1,0 +1,123 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    z-index: 1
+}
+
+h1 {
+    font-family: 'Kaushan Script', cursive;
+    color: #fecc20;
+    font-size: 30px;
+}
+
+img {
+    width: 15px;
+    height: 15px;
+    filter: invert(1);
+}
+
+div.drop-down, .drop-down-open, .drop-down-close  {
+    width:100vw;
+    height: 30vh;
+    background-color: #212529;
+    position: fixed;
+    top: 1;
+    transform: translateY(-60vh);
+    z-index: 0;
+}
+.drop-down-open {
+
+    display: block;
+    animation-name: open;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.drop-down-close {
+    display: block;
+    animation: close .6s forwards linear ;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    align-items: center;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.hidden-by-default {
+    display: none;
+}
+
+.hbgr {
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 80px;
+    background-color: #fed136;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* @keyframes slide {
+    0% {top: 0px;}
+    100% {top: 1000px;}
+} */
+
+@keyframes open {
+    from {
+        transform: translateY(-300px);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes close {
+    from {
+        transform: translateY(0px)
+    }
+    to {
+        transform: translateY(-400px);
+    }
+}
+
+@media (min-width: 1200px){
+    nav {
+        width: 86vw;
+        margin-left: 7vw;
+    }
+}
+
+@media (min-width: 990px) {
+    .drop-down, .drop-down-open, .drop-down-close {
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    nav {
+        justify-content: space-around;
+        background-color: #212529;
+        height: 58px;
+    }
+    .hbgr {
+        display: flex;
+    }
+    li {
+        display: none;
+    }
+    #title {
+        font-size: 20px;
+    }
+    .nav-items {
+        width: 20vw;
+    }
+}
